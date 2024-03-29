@@ -1,3 +1,5 @@
+![TheWorldNftFund](https://i.imgur.com/RoiR7mc.png)
+
 # The World NFT Fund 🌐💰
 
 The World NFT Fund, a Django-based full-stack web application dedicated to showcasing NFT projects. This project utilizes HTML, CSS, and JavaScript for the frontend, along with Django in the backend, to provide an engaging platform for exploring various NFT initiatives.
