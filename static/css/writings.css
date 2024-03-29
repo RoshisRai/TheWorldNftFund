@@ -1,0 +1,129 @@
+/* TAB CONTENT  */
+.tabcontent{
+    width: 100%;
+    min-height: 60px;
+    /* background: var(--primarycolor); */
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+}
+.tabcontainer{
+    display: flex;
+    width: 80%;
+    max-width: 140rem;
+}
+.tabcontainer li{
+    list-style: none;
+    margin-right: 1.2rem;
+}
+.tabcontainer li a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    display: inline-block;
+    padding: .3rem 1rem;
+    background: var(--secondaryhover);
+    border-radius: 5rem;
+    color: var(--backcolor);
+    transition: all .3s;
+}
+.tabcontainer li a:hover{
+    background: var(--primaryhover);
+}
+/* TAB CONTENT */
+
+/* WRITING LIST CONTENT */
+.writinglistcontent {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3rem;
+}
+.writingcardcontainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+    padding: 20px;
+    width: 80%;
+    max-width: 140rem;
+}
+.writingcardcontainer a{
+    display: flex;
+    justify-content: center;
+}
+.writingcard{
+    width: 100%;
+    max-width: 500px;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 2px 2px 6px #bbb;
+    transition: all .3s;
+    color: var(--black);
+}
+.writingcard:hover{
+    transform: translate(0, -5px);
+    box-shadow: 5px 5px 12px #bbb;
+}
+.writingcardimg{
+    position: relative;
+    width: 100%;
+    height: 340px;
+    overflow: hidden;
+}
+.writingcardimg img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .3s ease-out;
+}
+.writingcardimg img:hover{
+    transform: scale(1.2);
+}
+.writingcarddesc {
+    padding: 1rem;
+}
+.writingcarddesc h4{
+    font-size: 2rem;
+    font-weight: 600;
+    border-bottom: 3px solid var(--primarycolor);
+}
+.writingcarddesc p{
+    font-size: 1.4rem;
+    text-align: justify;
+}
+@media screen and (max-width: 1200px){
+    .tabcontainer{
+        width: 90%;
+    }
+    .writingcardcontainer{
+        width: 94%;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        grid-gap: 10px;
+    }
+    .writingcarddesc h4{
+        font-size: 1.9rem;
+    }
+    .writingcarddesc p{
+        font-size: 1.3rem;
+    }
+}
+@media screen and (max-width: 992px){
+    .writingcard{
+        margin-top: 1rem;
+    }
+    .writingcarddesc h4{
+        font-size: 1.8rem;
+    }
+    .writingcarddesc p{
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 768px){
+    .writingcard{
+        max-width: 450px;
+    }
+}
+/* WRITING LIST CONTENT */  

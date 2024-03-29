@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About Us{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock css %}
+{% block additional-header %}
+<meta name="keywords" content="social organization, NFT, physical, World NFT Fund">
+<meta name="description" content="">
+<link rel="canonical" href="https://worldnftfund.com/about/">
+<meta name="og:title" content="About US | The World NFT Fund" />
+<meta name="og:description" content="" />
+<meta name="og:image" content="https://worldnftfund.com/static/img/logo.png" />
+<meta name='og:type' content="website">
+<meta name='og:site_name' content="The World NFT Fund">
+<meta name='og:url' content="https://worldnftfund.com/">
+<meta name="twitter:title" content="About Us | The World NFT Fund" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image" content="https://worldnftfund.com/static/img/logo.png" />
+{% endblock additional-header %}
+{% block maincontent %}
+
+    <!-- NAV BAR -->
+    <nav>
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'img/logo.png' %}" alt="World Nft Fund Logo">
+            </a>
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="{% url 'home' %}">WNF</a></li>
+            <li><a href="{% url 'projects' %}">Projects</a></li>
+            <li><a href="{% url 'writings' %}">Writing</a></li>
+            <li><a href="{% url 'donations' %}">Donations</a></li>
+            <li><a class="active" href="{% url 'about' %}">About</a></li>
+            {% if user.is_authenticated %}
+            {% if user.is_superuser %}
+            <li><a href="/admin/" target="_blank">Admin</a></li>
+            {% endif %}
+            {% endif %}
+        </ul>
+    </nav>
+    <!-- NAV BAR -->
+
+    <!-- ABOUT CONTENT -->
+    <div class="aboutcontent">
+        <div class="aboutcontainer">
+            <div class="aboutheading" data-aos='fade-right' data-aos-duration="700">
+                <h2><span>Hi, we're Jack, Rose and Caledon!</span></h2>
+            </div>
+            <div class="abouttext" data-aos="fade-up" data-aos-duration="600" data-aos-delay='300'>
+                <p>The World NTF Fund is the home for our professional projects.</p>
+                <p>
+                    The world NFT fund is an organization that mints digital NFTs and turns it into physical forms helping needy people. Since the world is growing more and more into new virtual discoveries like The Metaverse and NFT, we focus on using these modern arts and technologies to help needy people. The basic concept of WNF projects is to sell digital NFTs and replace them with the same physical items in need.
+                </p>
+                <p>
+                    (for example: if we mint two tables and two chairs of NFT. And if someone makes a purchase, then the purchased product gets replaced with the physical ones, which will be donated to the needy).
+                </p>
+                <p>
+                    The world NFT Fund is an initiative to help children as they are the future of humanity. With NFTs, we can do many things like donations, philanthropy, etc. This initiative can help many children, as they can have better education and learn more as we can provide people quality of life and make the future generation more educated from this initiative.
+                </p>
+                <h5>Objectives of World NFT Fund (WNF):</h5>
+                <p>
+                    Our vision is to make the world a better place for Youngsters and others, by providing them free financial education and opportunities.So that we can create a better tomorrow for the upcoming generation with the technology we have now. Our vision is to use modern technology for better use which will make this world a peaceful and safer place for children, women,  old people, and others too.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- ABOUT CONTENT -->
+{% endblock maincontent %}

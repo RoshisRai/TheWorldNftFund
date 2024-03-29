@@ -1,0 +1,525 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}The World NFT Fund{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock css %}
+
+{% block additional-header %}
+<meta name="keywords" content="social organization, NFT, physical, World NFT Fund">
+<meta name="description" content="The social organization which replaces the digital contents of NFT into physical forms which hepls to serve needy people.">
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://worldnftfund.com/">
+<meta name="og:title" content="World NFT Fund" />
+<meta name="og:description" content="" />
+<meta name="og:image" content="https://worldnftfund.com/static/img/logo.png" />
+<meta name='og:type' content="website">
+<meta name='og:site_name' content="World NFT Fund">
+<meta name='og:url' content="https://worldnftfund.com/">
+<meta name="twitter:title" content="World NFT Fund" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image" content="https://worldnftfund.com/static/img/logo.png" />
+{% endblock additional-header %}
+
+{% block maincontent %}
+
+   <!-- NAV BAR -->
+   
+   <div class="navbar">
+    <nav>
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'img/logo.png' %}" alt="World Nft Fund Logo">
+            </a>
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a class="active" href="{% url 'home' %}">WNF</a></li>
+            <li><a href="{% url 'projects' %}">Projects</a></li>
+            <li><a href="{% url 'writings' %}">Writing</a></li>
+            <li><a href="{% url 'donations' %}">Donations</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            {% if user.is_authenticated %}
+            {% if user.is_superuser %}
+            <li><a href="/admin/" target="_blank">Admin</a></li>
+            {% endif %}
+            {% endif %}
+        </ul>
+    </nav>
+   </div>
+    <!-- NAV BAR -->
+
+    <!-- LANDING PAGE FIRST CONTENT -->
+    <div class="content">
+        <div class="contentImg">
+            <div id="particles-js"></div>
+                <img src="{% static 'img/landingdemo.jpeg' %}" alt="">
+            </div>
+            <div class="contentDesc">
+                <div class="contentText" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="200" data-aos-offset="-1000">
+                    <h1 data-aos="fade-right" data-aos-duration="400" data-aos-delay="400" data-aos-offset="-1000">The World NFT Fund</h1>
+                    <p>The social organization which replaces the digital contents of NFT into physical forms which hepls to serve needy people.</p>
+                    <br>
+                    <p>
+                        Our first project “Elementary Books”  is a concept of sixty different NFT books. Each of these books...
+                    </p>
+                </div>
+            <div class="contentBtn">
+                <button class="btn readmorebtn" data-aos="fade-right" data-aos-duration="400" data-aos-delay="1000" data-aos-offset="-1000"><a href="{% url 'about' %}">Ream More &rarr;</a></button>
+                <button class="btn openseabtn" data-aos="fade-left" data-aos-duration="400" data-aos-delay="1200" data-aos-offset="-1000"><a href="">Open Sea &rarr;</a></button>
+            </div>
+            <div class="contentLinks">
+                <a href="" data-aos="fade-up" data-aos-duration="400" data-aos-delay="1800" data-aos-offset="-1000"><i class='fab fa-facebook'></i></a>
+                <a href="" data-aos="fade-up" data-aos-duration="400" data-aos-delay="2000" data-aos-offset="-1000"><i class='fab fa-instagram'></i></a>
+                <a href="" data-aos="fade-up" data-aos-duration="400" data-aos-delay="2200" data-aos-offset="-1000"><i class='fab fa-twitter'></i></a>
+                <a href="" data-aos="fade-up" data-aos-duration="400" data-aos-delay="2200" data-aos-offset="-1000"><i class='fab fa-discord'></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- LANDING PAGE FIRST CONTENT -->
+
+    <!-- LANDING PAGE SECOND CONTENT -->
+    <div class="secondcontent">
+        <div class="sectitle">
+            <h1><span>Elementary Books</span></h1>
+        </div>
+        <div class="seccontainer">
+            <div class="secdetails" data-aos="fade-right" data-aos-duration="1000">
+                <h2>What are elementary books?</h2>
+                <p>
+                    Our first project “Elementary Books”  is a concept of sixty unique and individually made  different NFT books. Each of these books have unique features and many more which will help to establish school libraries, book donation campaigns and from the purchase of each book of WNF WNF will support  education the expenses of sixty students. This project will also help such students and families who are economically low. Some of our NFTs are Rarer than others.
+                </p>
+                <p>
+                    Owning one of our NFTs will change a random stranger's life forever, donate a library to a school and Give a access to the World NFT fund's campaigns.
+                </p>
+                <p>
+                    This initiative will change many lives. Our goal is to help these people have a better life and quality living.
+                </p>
+            </div>
+            <div class="secimg" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="center-bottom">
+                <img src="{% static 'img/secimage.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- LANDING PAGE SECOND CONTENT -->
+
+    <!-- LANDING PAGE THIRD CONTENT -->
+    <div class="thirdcontent">
+        <div class="thirdcontainer">
+            <div class="titem titem1" 
+            data-aos="zoom-in"  
+            data-aos-duration="500"
+            data-aos-offset="120">
+                <h2>60</h2>
+                <p>60 Unique And Magnificant Elementary Books NTFs</p>
+            </div>
+            <div class="titem titem2"
+            data-aos="zoom-in"  
+            data-aos-duration="500"
+            data-aos-offset="240">
+                <h2>100%</h2>
+                <p>Unlock additional benefits through roadmap activations and future phases</p>
+            </div>
+            <div class="titem titem3"
+            data-aos="zoom-in"  
+            data-aos-duration="500"
+            data-aos-offset="350">
+                <h2>&copy;</h2>
+                <p>Includes creative and commercial rights usage of your elementary book for as long as you keep the NFT</p>
+            </div>
+        </div>
+    </div>
+    <!-- LANDING PAGE THIRD CONTENT -->
+
+    <!-- LANDING PAGE ROADMAP CONTENT -->
+    <div class="roadmapcontent">
+        <div class="roadtitle">
+           <h1><span>ROADMAP 1.0</span></h1>
+           <p>We aim to be a community and utility oriented project. We want holders to have unique and exciting benefits and that's why we're raising the bar when it comes to what we're offering.</p>
+        </div>
+        <!-- <div class="roadcontainer">
+           <div class="roadimg" data-aos="zoom-out" data-aos-duration="500" data-aos-offset="200">
+              <img src="./img/secondimg.jpg" alt="">
+           </div>
+           <div class="roaddetails" data-aos="fade-up" data-aos-offset="300" data-aos-duration="500">
+              <h3>Elementry Books Utility</h3>
+              <p>
+                 For now, the main utility for The Elementary Books collection will be the exclusive access that it provides! Having an Elementary Books NFT will grant you exclusive access to our Alpha Group and Chats and will help people in needs.
+                 </p>
+                 <h4>
+                    The World NFT Fund will execute the following steps in the coming future.
+                 </h4>
+                 <ul>
+                    <li>5x 1 ETH Giveaway for the Books minted in the first 10% of the collection. </li>
+                    <li>10x Elementary Books will be raffled to lucky holders. 
+                 </li>
+                    <li>A 5 ETH Donation will be made to a charity chosen by the holders. 
+                 </li>
+                    <li>First Elementary Books Merch Drop for our community.</li>
+                 </ul>
+           </div>
+        </div> -->
+     </div>
+  
+     <div class="ag-timeline-block">
+        <!-- <div class="ag-timeline_title-box">
+          <div class="ag-timeline_tagline">Timeline</div>
+          <div class="ag-timeline_title">No Flex</div>
+        </div> -->
+      
+        <section class="ag-section">
+          <div class="ag-format-container">
+            <div class="js-timeline ag-timeline">
+              
+              <div class="js-timeline_line ag-timeline_line">
+                <div class="js-timeline_line-progress ag-timeline_line-progress"></div>
+              </div>
+      
+              <div class="ag-timeline_list">
+                <div class="js-timeline_item ag-timeline_item">
+                  <div class="ag-timeline-card_box">
+                    <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                      <div class="ag-timeline-card_point">A</div>
+                    </div>
+                    <div class="ag-timeline-card_meta-box">
+                      <div class="ag-timeline-card_meta">10%</div>
+                    </div>
+                  </div>
+                  <div class="ag-timeline-card_item">
+                    <div class="ag-timeline-card_inner">
+                      <!-- <div class="ag-timeline-card_img-box">
+                        <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/images/img-13.png" class="ag-timeline-card_img" width="640" height="360" />
+                      </div> -->
+                      <div class="ag-timeline-card_info">
+                        <!-- <div class="ag-timeline-card_title">Elementary Book Launch</div> -->
+                        <div class="ag-timeline-card_desc">
+                          Start giving educational awareness for  60 economically backward places.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ag-timeline-card_arrow"></div>
+                  </div>
+                </div>
+      
+                <div class="js-timeline_item ag-timeline_item">
+                  <div class="ag-timeline-card_box">
+                    <div class="ag-timeline-card_meta-box">
+                      <div class="ag-timeline-card_meta">20%</div>
+                    </div>
+                    <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                      <div class="ag-timeline-card_point">B</div>
+                    </div>
+                  </div>
+                  <div class="ag-timeline-card_item">
+                    <div class="ag-timeline-card_inner">
+                      <!-- <div class="ag-timeline-card_img-box">
+                        <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/images/img-12.png" class="ag-timeline-card_img" width="640" height="360" alt="" />
+                      </div> -->
+                      <div class="ag-timeline-card_info">
+                        <!-- <div class="ag-timeline-card_title">Puny Panda</div> -->
+                        <div class="ag-timeline-card_desc">
+                          Book donation in over 60 Schools.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ag-timeline-card_arrow"></div>
+                  </div>
+                </div>
+      
+                <div class="js-timeline_item ag-timeline_item">
+                  <div class="ag-timeline-card_box">
+                    <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                      <div class="ag-timeline-card_point">C</div>
+                    </div>
+                    <div class="ag-timeline-card_meta-box">
+                      <div class="ag-timeline-card_meta">40%</div>
+                    </div>
+                  </div>
+                  <div class="ag-timeline-card_item">
+                    <div class="ag-timeline-card_inner">
+                      <!-- <div class="ag-timeline-card_img-box">
+                        <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/images/img-11.png" class="ag-timeline-card_img" width="640" height="360" alt="" />
+                      </div> -->
+                      <div class="ag-timeline-card_info">
+                        <!-- <div class="ag-timeline-card_title">5X ETH Giveaway</div> -->
+                        <div class="ag-timeline-card_desc">
+                          Bearing the schooling expenses for 10  random families.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ag-timeline-card_arrow"></div>
+                  </div>
+                </div>
+      
+                <div class="js-timeline_item ag-timeline_item">
+                  <div class="ag-timeline-card_box">
+                    <div class="ag-timeline-card_meta-box">
+                      <div class="ag-timeline-card_meta">60%</div>
+                    </div>
+                    <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                      <div class="ag-timeline-card_point">D</div>
+                    </div>
+                  </div>
+                  <div class="ag-timeline-card_item">
+                    <div class="ag-timeline-card_inner">
+                      <!-- <div class="ag-timeline-card_img-box">
+                        <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/images/img-10.png" class="ag-timeline-card_img" width="640" height="360" alt="" />
+                      </div> -->
+                      <div class="ag-timeline-card_info">
+                        <!-- <div class="ag-timeline-card_title">Launch of our Cryptocurrency</div> -->
+                        <div class="ag-timeline-card_desc">
+                          Scholarship
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ag-timeline-card_arrow"></div>
+                  </div>
+                </div>
+      
+                <div class="js-timeline_item ag-timeline_item">
+                  <div class="ag-timeline-card_box">
+                    <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                      <div class="ag-timeline-card_point">E</div>
+                    </div>
+                    <div class="ag-timeline-card_meta-box">
+                      <div class="ag-timeline-card_meta">80%</div>
+                    </div>
+                  </div>
+                  <div class="ag-timeline-card_item">
+                    <div class="ag-timeline-card_inner">
+                      <!-- <div class="ag-timeline-card_img-box">
+                        <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/images/img-9.png" class="ag-timeline-card_img" width="640" height="360" alt="" />
+                      </div> -->
+                      <div class="ag-timeline-card_info">
+                        <!-- <div class="ag-timeline-card_title">Airdrop from WNF</div> -->
+                        <div class="ag-timeline-card_desc">
+                          Establishing 5 community libraries and 5 school libraries.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ag-timeline-card_arrow"></div>
+                  </div>
+                </div>
+      
+                <div class="js-timeline_item ag-timeline_item">
+                  <div class="ag-timeline-card_box">
+                    <div class="ag-timeline-card_meta-box">
+                      <div class="ag-timeline-card_meta">100%</div>
+                    </div>
+                    <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                      <div class="ag-timeline-card_point">F</div>
+                    </div>
+                  </div>
+                  <div class="ag-timeline-card_item">
+                    <div class="ag-timeline-card_inner">
+                      <!-- <div class="ag-timeline-card_img-box">
+                        <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/images/img-8.png" class="ag-timeline-card_img" width="640" height="360" alt="" />
+                      </div> -->
+                      <div class="ag-timeline-card_info">
+                        <!-- <div class="ag-timeline-card_title">Magic Manic Release</div> -->
+                        <div class="ag-timeline-card_desc">
+                          Next project launch for World Nft Fund Institution.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ag-timeline-card_arrow"></div>
+                  </div>
+                </div>
+                 
+              </div>
+      
+            </div>
+          </div>
+        </section>
+     </div>
+    <!-- LANDING PAGE ROADMAP CONTENT -->
+
+    <!-- LANDING PAGE BOOK CATEGORY CONTENT -->
+    <div class="categorycontent">
+        <div class="cardcontainer">
+            <div class="card card1" data-aos="fade-up" data-aos-offset="100" data-aos-duration="500">
+                <div class="catimg">
+                    <img src="{% static 'img/cat1.jpg' %}" alt="">
+                </div>
+                <div class="catdesc">
+                    <h4>Gold Elementary Book</h4>
+                    <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                </div>
+            </div>
+            <div class="card card2" data-aos="fade-up" data-aos-offset="150" data-aos-duration="500">
+                <div class="catimg">
+                    <img src="{% static 'img/cat2.png' %}" alt="">
+                </div>
+                <div class="catdesc">
+                    <h4>Silver Elementary Book</h4>
+                    <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                </div>
+            </div>
+            <div class="card card3" data-aos="fade-up" data-aos-offset="200" data-aos-duration="500">
+                <div class="catimg">
+                    <img src="{% static 'img/cat3.jpg' %}" alt="">
+                </div>
+                <div class="catdesc">
+                    <h4>Platinum Elementary Book</h4>
+                    <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                </div>
+            </div>
+            <div class="card card4" data-aos="fade-up" data-aos-offset="100" data-aos-duration="500">
+                <div class="catimg">
+                    <img src="{% static 'img/cat4.jpg' %}" alt="">
+                </div>
+                <div class="catdesc">
+                    <h4>Crystal Elementary Book</h4>
+                    <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                </div>
+            </div>
+            <div class="card card5" data-aos="fade-up" data-aos-offset="150" data-aos-duration="500">
+                <div class="catimg">
+                    <img src="{% static 'img/cat5.jpg' %}" alt="">
+                </div>
+                <div class="catdesc">
+                    <h4>Gold Elementary Book</h4>
+                    <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                </div>
+            </div>
+            <div class="card card6" data-aos="fade-up" data-aos-offset="250" data-aos-duration="500">
+                <div class="catimg">
+                    <img src="{% static 'img/cat6.jpg' %}" alt="">
+                </div>
+                <div class="catdesc">
+                    <h4>Gold Elementary Book</h4>
+                    <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- LANDING PAGE BOOK CATEGORY CONTENT -->
+
+    <!-- LANDING PAGE DISCORD LINK CONTENT -->
+    <div class="linkcontent">
+        <div class="linkcontainer">
+            <div class="linkwrapper">
+                <div class="linktext">
+                    <h4>Join The Discord</h4>
+                    <h4>Our Community Is Growing Everyday</h4>
+                </div>
+                <div class="linkbtn">
+                    <button class="btn"><a href=""><i class="fab fa-discord" style="font-size: 1.5rem;"></i> Discord&rarr;</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- LANDING PAGE DISCORD LINK CONTENT -->
+
+    <!-- LANDING PAGE TEAM INFO CONTENT -->
+    <div class="teamcontent">
+        <div class="roadtitle">
+            <h1><span>TEAM MEMBERS</span></h1>
+            <p>Hi,we are the Creators  of the World's first Nft Organization World Nft Fund. We address ourselves as jack,rose and caledon. We want to help many people through the assistance of NFT and digital technology and bring progress in the world.</p>
+            <p style="font-weight: 600;">Our objective is to help the world to be a better place for living beings.</p>
+        </div>
+        <div class="teamcontainer">
+            <div class="tcard card1" data-aos="flip-left" data-aos-duration="700" data-aos-offset="100">
+                <div class="teamimg">
+                    <img src="{% static 'img/cat1.jpg' %}" alt="">
+                </div>
+                <div class="catdesc">
+                    <h4>Jack</h4>
+                    <p>Digital marketing geek by day, NFT enthusiast by night. I like to play video games and take long walks.</p>
+                </div>
+            </div>
+            <div class="tcard card2" data-aos="flip-left" data-aos-duration="700" data-aos-offset="150">
+                <div class="teamimg">
+                    <img src="{% static 'img/cat2.png' %}" alt="">
+                </div>
+                <div class="catdesc">
+                    <h4>Rose</h4>
+                    <p>Competitive in every aspect of life. Hunting NFTs since February. A bit boared. A bit angry.</p>
+                </div>
+            </div>
+            <div class="tcard card3"data-aos="flip-left" data-aos-duration="700" data-aos-offset="200">
+                <div class="teamimg">
+                    <img src="{% static 'img/cat3.jpg' %}" alt="">
+                </div>
+                <div class="catdesc">
+                    <h4>Caledon</h4>
+                    <p>Illustrator to pay the bills, boar tamer for the thrills, collecting NFTs is what fulfills.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- LANDING PAGE TEAM INFO CONTENT -->
+
+    <!-- LANDING PAGE FAQ CONTENT -->
+    <div class="faqcontent">
+        <div class="faqtitle" data-aos="fade-up" data-aos-duration="600" data-aos-offset="130">
+            <h1><span>Frequently Asked Questions(FAQ)</span></h1>
+            <p>
+                The digital world is going to be immense!. It is the future with big monopoly companies like Facebook changing to Meta and with the NFT. So, we wanted to create help for people with the aid of modern world activities. The world NFT Fund is a small initiative to help children as they are the future. With NFTs, we can do many things like a donation. But the NFT avail mainly focuses on replacing the digital NFTs with the physical and actual versions of them. With this idea, we can help enough children as they can have better education and learn more as we can provide people quality of life and make the future generation more educated from this initiative.  
+            </p>
+            <p>
+                In this explanation process, we would like to answer the 5W (, what, where, why, when, who1h(how) from this project.
+            </p>
+        </div>
+        <div class="faqtext">
+            <div class="faqwapper">
+                <div class="faqq" data-aos="fade-right" data-aos-duration="400" >
+                    <h3>What is THe World NFT Fund?On what does it focus?</h3>
+                </div>
+                <div class="faqa">
+                    <p>
+                        The world NFT fund is an organization to help those indeed in this modern world. While the world is growing more and more into new virtual discoveries like The Metaverse and NFTs. We focus on using these modern arts and technologies to help needy people. The basic concept of us is to sell digital NFTs and replace them with the same physical assets in need (for example: if we mint two tables and two chairs of NFT and when someone makes a purchase. The purchased product gets replaced with the physical ones for the kids to learn at our organization or home). Our main objective is to provide poor, needy, and capable kids with a more modern way of receiving knowledge and helping their families by providing them the best that we can get for them.
+                    </p>
+                </div>
+            </div>
+            <div class="faqwapper">
+                <div class="faqq" data-aos="fade-right" data-aos-duration="400" >
+                    <h3>Where does the idea evolve from?</h3>
+                </div>
+                <div class="faqa">
+                    <p>
+                        The idea of the social NFT work starts from a small room containing some students from poor and needy families to help them.
+                    </p>
+                </div>
+            </div>
+            <div class="faqwapper">
+                <div class="faqq" data-aos="fade-right" data-aos-duration="400" >
+                    <h3>Why?</h3>
+                </div>
+                <div class="faqa">
+                    <p>
+                        Illiteracy is the root cause of all social crimes that have broken off people from getting the quality of life and modernization. The primary milestone of us is to reach out to many people as we can with the help of NFTs and make this world a better place for them.
+                    </p>
+                </div>
+            </div>
+            <div class="faqwapper">
+                <div class="faqq" data-aos="fade-right" data-aos-duration="400" >
+                    <h3>When?</h3>
+                </div>
+                <div class="faqa">
+                    <p>
+                        The present is the right time to start everything that we can because the world is initially growing towards a digital and virtual palace it is the right time to take a good purpose from NFTs and digital arts.
+                    </p>
+                </div>
+            </div>
+            <div class="faqwapper">
+                <div class="faqq" data-aos="fade-right" data-aos-duration="400" >
+                    <h3>How?</h3>
+                </div>
+                <div class="faqa">
+                    <p>
+                        We plan to help people with digital art pieces of our own from which we replace it with a physical version of it. The royalties obtained from NFTs will be used for donations and other social activities. We tend to reach those millions of NFT philanthropists, investors, buyers who come and join us at this revolutionary movement that we're working in. Your one simple purchase can make someone's future better.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+ <!-- LANDING PAGE FAQ CONTENT -->
+{% endblock maincontent %}
+{% block js %}
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+<script src="{% static 'js/timeline.js' %}"></script>
+{% endblock js %}

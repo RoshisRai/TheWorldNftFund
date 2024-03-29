@@ -1,0 +1,13 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'home' %}">
+        <img src="{% static 'img/logo.png' %}" alt="World NFT Fund Logo" height='40px'>
+    </a>
+</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

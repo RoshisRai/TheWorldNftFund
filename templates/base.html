@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block additionalheader %}
+    {% endblock additionalheader %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="shortcut icon" href="{% static 'img/logo.png' %}" type="image/png">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    {% block css %}
+    {% endblock css %}
+    {% block additional-header %}
+    {% endblock additional-header %}
+    <script
+      src="https://kit.fontawesome.com/655257df20.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+
+   {% block maincontent %}
+   {% endblock maincontent %}
+
+   <!-- FOOTER -->
+   <footer>
+      <div class="waves">
+         <div class="wave" id="wave1"></div>
+         <div class="wave" id="wave2"></div>
+         <div class="wave" id="wave3"></div>
+         <div class="wave" id="wave4"></div>
+      </div>
+      <ul class="footersocialicons">
+         <li><a href=""><i class="fab fa-facebook"></i></a></li>
+         <li><a href=""><i class="fab fa-instagram"></i></a></li>
+         <li><a href=""><i class="fab fa-twitter"></i></a></li>
+         <li><a href=""><i class="fab fa-discord"></i></a></li>
+      </ul>
+      <ul class="footermenu">
+         <li><a href="{% url 'home' %}">Home</a></li>
+         <li><a href="{% url 'projects' %}">Projects</a></li>
+         <li><a href="{% url 'writings' %}">Writing</a></li>
+         <li><a href="{% url 'about' %}">About</a></li>
+         <li><a href="/admin/">Log In</a></li>
+      </ul>
+      <p><i class="far fa-copyright"></i> 2022 - <span class="currentyear"></span> The World NFT Fund | All Rights Reserved</p>
+   </footer>
+   <!-- FOOTER -->
+
+   <!-- BASE JS FILES -->
+   <script src="{% static 'js/scripts.js' %}"></script>
+   <script src="{% static 'js/particles.min.js' %}"></script>
+   <script src="{% static 'js/app.js' %}"></script>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script>
+      AOS.init({
+         // offset: 120, // offset (in px) from the original trigger point
+         // delay: 0, // values from 0 to 3000, with step 50ms
+         // duration: 1000 // values from 0 to 3000, with step 50ms
+      });
+   </script>
+   <!-- BASE JS FILES -->
+
+   {% block js %}
+   {% endblock js %}
+</body>
+</html>

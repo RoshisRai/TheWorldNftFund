@@ -1,0 +1,180 @@
+/* DETAIL PAGE CONTENT  */
+.detailcontent{
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7rem;
+    padding-bottom: 8rem;
+}
+.detailcategory{
+    width: 70%;
+    margin-bottom: 3rem;
+}
+.detailcategory span, .detailcategory a{
+    padding: .4rem .9rem;
+    background: var(--secondaryhover);
+    font-size: 1.3rem;
+    color: var(--backcolor);
+    border-radius: 5rem;
+    margin-right: 1rem;
+}
+.detailcategory a i{
+    font-size: 1.4rem;
+}
+.detailtitle{
+    width: 70%;
+    margin-bottom: 2.5rem;
+}
+.detailtitle h1{
+    font-size: 3.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.detailsubtitle{
+    width: 70%;
+    margin-bottom: 5rem;
+}
+.detailsubtitle p{
+    font-size: 1.5rem;
+    color: #333;
+}
+.detailimage{
+    position: relative;
+    width: 100%;
+    height: 550px;
+    margin-bottom: 5rem;
+}
+.detailimage img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+}
+.detaildetail{
+    width: 65%;
+}
+.detaildetail p,
+.detaildetail span,
+.detaildetail a{
+    font-size: 1.5rem;
+}
+.detaildetail h1,
+.detaildetail h2,
+.detaildetail h3,
+.detaildetail h4,
+.detaildetail h5,
+.detaildetail h6{
+    font-weight: 600;
+}
+.detaildetail h1{
+    font-size: 4rem;
+}
+.detaildetail h2{
+    font-size: 3.6rem;
+}
+.detaildetail h3{
+    font-size: 3.2rem;
+}
+.detaildetail h4{
+    font-size: 2.8rem;
+}
+.detaildetail h5{
+    font-size: 2.4rem;
+}
+.detaildetail h6{
+    font-size: 1.8rem;
+}
+@media screen and (max-width: 1200px){
+    .detailcontent{
+        margin-top: 5rem;
+    }
+    .detailcategory{
+        margin-bottom: 2.5rem;
+    }
+    .detailimage{
+        margin-bottom: 3.5rem;
+        height: 440px;
+    }
+    .detailtitle h1{
+        font-size: 3.2rem;
+    }
+}
+@media screen and (max-width: 992px){
+    .detailcontent{
+        margin-top: 4rem;
+    }
+    .detailcategory,
+    .detailtitle{
+        margin-bottom: 2rem;
+    }
+    .detailtitle h1{
+        font-size: 2.7rem;
+    }
+    .detailsubtitle{
+        margin-bottom: 2.5rem;
+    }
+    .detailimage{
+        margin-bottom: 3.5rem;
+        height: 400px;
+    }
+    .detaildetail{
+        width: 78%;
+    }
+    .detailsubtitle p,
+    .detaildetail p{
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 768px){
+    .detailcategory,
+    .detailtitle{
+        margin-bottom: 1rem;
+        width: 85%;
+    }
+    .detailtitle h1{
+        font-size: 2.5rem;
+    }
+    .detailsubtitle{
+        width: 85%;
+    }
+    .detailimage{
+        height: 350px;
+        margin-bottom: 2.5rem;
+    }
+    .detaildetail{
+        width: 85%;
+    }
+}
+@media screen and (max-width: 576px){
+    .detailcategory{
+        margin-bottom: 1.5rem;
+    }
+    .detailtitle{
+        margin-bottom: 1rem;
+        width: 90%;
+    }
+    .detailtitle h1{
+        font-size: 2rem;
+    }
+    .detailsubtitle{
+        width: 90%;
+        margin-bottom: 1.4rem;
+    }
+    .detailimage{
+        height: 250px;
+    }
+    .detaildetail{
+        width: 92%;
+    }
+    .detaildetail p,
+    .detaildetail span,
+    .detaildetail a{
+        font-size: 1.4rem;
+    }
+}
+/* DETAIL PAGE CONTENT */

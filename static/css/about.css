@@ -1,0 +1,82 @@
+/* ABOUT CONTENT */
+.aboutcontent{
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    margin-top: 6rem;
+    padding-bottom: 6rem;
+}
+.aboutcontainer{
+    width: 70%;
+    padding: 1rem 0;
+    max-width: 110rem;
+}
+.aboutheading{
+    margin-bottom: 3.5rem;
+}
+.aboutheading h2{
+    font-size: 4.5rem;
+}
+.aboutheading h2 span{
+    border-bottom: 3px solid var(--primarycolor);
+}
+.abouttext h5{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    font-weight: 600;
+}
+.abouttext p{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+@media screen and (max-width: 1200px){
+    .aboutcontainer{
+        width: 80%;
+    }
+    .aboutheading h2{
+        font-size: 4.2rem;
+    }
+    .abouttext p{
+        font-size: 1.35rem;
+    }
+}
+@media screen and (max-width: 992px){
+    .aboutcontent{
+        margin-top: 4rem;
+    }
+    .aboutcontainer{
+        width: 85%;
+    }
+    .aboutheading{
+        margin-bottom: 2.5rem;
+    }
+    .aboutheading h2{
+        font-size: 4rem;
+    }
+    .abouttext p{
+        font-size: 1.32rem;
+    }
+}
+@media screen and (max-width: 992px){
+    .aboutcontent{
+        margin-top: 3rem;
+    }
+    .aboutcontainer{
+        width: 90%;
+    }
+    .aboutheading{
+        margin-bottom: 2.5rem;
+    }
+    .aboutheading h2{
+        font-size: 3.8rem;
+    }
+    .abouttext h5{
+        font-size: 1.8rem;
+    }
+    .abouttext p{
+        font-size: 1.3rem;
+    }
+}
+/* ABOUT CONTENT */

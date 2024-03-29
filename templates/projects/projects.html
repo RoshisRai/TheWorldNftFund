@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Projects | The World NFT Fund{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/projects.css' %}">
+{% endblock css %}
+{% block additional-header %}
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="canonical" href="https://worldnftfund.com/projects/">
+<meta name="og:title" content="Projects | The World NFT Fund" />
+<meta name="og:description" content="" />
+<meta name="og:image" content="https://worldnftfund.com/static/img/logo.png" />
+<meta name='og:type' content="website">
+<meta name='og:site_name' content="The World NFT Fund">
+<meta name='og:url' content="https://worldnftfund.com/projects/">
+<meta name="twitter:title" content="Projects | The World NFT Fund" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image" content="https://worldnftfund.com/static/img/logo.png" />
+{% endblock additional-header %}
+{% block maincontent %}
+
+    <!-- NAV BAR -->
+   <nav>
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'img/logo.png' %}" alt="World Nft Fund Logo">
+            </a>
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="{% url 'home' %}">WNF</a></li>
+            <li><a class="active" href="{% url 'projects' %}">Projects</a></li>
+            <li><a href="{% url 'writings' %}">Writing</a></li>
+            <li><a href="{% url 'donations' %}">Donations</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            {% if user.is_authenticated %}
+            {% if user.is_superuser %}
+            <li><a href="/admin/" target="_blank">Admin</a></li>
+            {% endif %}
+            {% endif %}
+        </ul>
+    </nav>
+    <!-- NAV BAR -->
+
+    <!-- TAB CONTENT -->
+    <div class="tabcontent">
+        <ul class="tabcontainer">
+            <li><a href="{% url 'projects' %}">All</a></li>
+            {% for cat in projectcategories %}
+            <li><a href="#" onclick="submitForm('{{cat}}')">{{cat}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <form action="{% url 'projects' %}" method="GET" id="catform">
+        {% csrf_token %}
+        <input type="hidden" name="projectcategory" id="projectcategory">
+    </form>
+    <!-- TAB CONTENT -->
+
+    <!-- PROJECT LIST CONTENT -->
+    <div class="projectlistcontent">
+        <div class="projectlistcontainer">
+            {% for project in projects %}
+            <a href="{% url 'projectdetail' project.slug %}">
+            <div class="projcard" data-aos="zoom-in-up" data-aos-offset="200" data-aos-duration="500">
+                <div class="projcarddesc">
+                    <h4>{{project.title}}</h4>
+                    <p>{{project.sub_title|truncatechars:160}}</p>
+                </div>
+                <div class="projcardimg">
+                    <img src="/media/{{project.photo}}" alt="">
+                </div>
+            </div>
+            </a>
+            {% endfor %}
+            <a href="">
+            <div class="projcard" data-aos="zoom-in-up" data-aos-offset="200" data-aos-duration="500">
+                <div class="projcarddesc">
+                    <h4>Magic Hats</h4>
+                    <p>A collection of 1,000 unique, randomly generated NFTS on ERC-1155 Solana network.</p>
+                </div>
+                <div class="projcardimg">
+                    <img src="{% static 'img/cat1.jpg' %}" alt="">
+                </div>
+            </div>
+            </a>
+            <a href="">
+            <div class="projcard" data-aos="zoom-in-up" data-aos-offset="200" data-aos-duration="500">
+                <div class="projcarddesc">
+                    <h4>Super Circles</h4>
+                    <p>A collection of 1,000 unique, randomly generated NFTS on ERC-1155 Solana network.</p>
+                </div>
+                <div class="projcardimg">
+                    <img src="{% static 'img/cat3.jpg' %}" alt="">
+                </div>
+            </div>
+            </a>
+            <a href="">
+            <div class="projcard" data-aos="zoom-in-up" data-aos-offset="200" data-aos-duration="500">
+                <div class="projcarddesc">
+                    <h4>Celestial Animals</h4>
+                    <p>A collection of 1,000 unique, randomly generated NFTS on ERC-1155 Solana network.</p>
+                </div>
+                <div class="projcardimg">
+                    <img src="{% static 'img/cat2.png' %}" alt="">
+                </div>
+            </div>
+            </a>
+            <a href="">
+            <div class="projcard" data-aos="zoom-in-up" data-aos-offset="200" data-aos-duration="500">
+                <div class="projcarddesc">
+                    <h4>Magical Lands</h4>
+                    <p>A collection of 1,000 unique, randomly generated NFTS on ERC-1155 Solana network.</p>
+                </div>
+                <div class="projcardimg">
+                    <img src="{% static 'img/cat4.jpg' %}" alt="">
+                </div>
+            </div>
+            </a>
+            <a href="">
+            <div class="projcard" data-aos="zoom-in-up" data-aos-offset="200" data-aos-duration="500">
+                <div class="projcarddesc">
+                    <h4>Cool Jelly Fish</h4>
+                    <p>A collection of 1,000 unique, randomly generated NFTS on ERC-1155 Solana network.</p>
+                </div>
+                <div class="projcardimg">
+                    <img src="{% static 'img/cat6.jpg' %}" alt="">
+                </div>
+            </div>
+            </a>
+            <a href="">
+            <div class="projcard" data-aos="zoom-in-up" data-aos-offset="200" data-aos-duration="500">
+                <div class="projcarddesc">
+                    <h4>Silky Salamandar</h4>
+                    <p>A collection of 1,000 unique, randomly generated NFTS on ERC-1155 Solana network.</p>
+                </div>
+                <div class="projcardimg">
+                    <img src="{% static 'img/cat3.jpg' %}" alt="">
+                </div>
+            </div>
+            </a>
+        </div>
+    </div>
+    <!-- PROJECT LIST CONTENT -->
+
+{% endblock maincontent %}
+{% block js %}
+<script>
+    function submitForm(category){
+        document.getElementById('projectcategory').value = category
+        document.getElementById('catform').submit()
+    }
+</script>
+{% endblock js%}

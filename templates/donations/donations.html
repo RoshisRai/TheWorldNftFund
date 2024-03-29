@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Writings | The World NFT Fund{% endblock title %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/writings.css' %}">
+{% endblock css %}
+{% block additional-header %}
+<meta name="keywords" content="">
+<meta name="description" content="">
+<link rel="canonical" href="https://worldnftfund.com/donations/">
+<meta name="og:title" content="Donations | The World NFT Fund" />
+<meta name="og:description" content="" />
+<meta name="og:image" content="https://worldnftfund.com/static/img/logo.png" />
+<meta name='og:type' content="website">
+<meta name='og:site_name' content="The World NFT Fund">
+<meta name='og:url' content="https://worldnftfund.com/donations/">
+<meta name="twitter:title" content="Donations | The World NFT Fund" />
+<meta name="twitter:description" content="" />
+<meta name="twitter:image" content="https://worldnftfund.com/static/img/logo.png" />
+{% endblock additional-header %}
+{% block maincontent %}
+
+    <!-- NAV BAR -->
+    <nav>
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'img/logo.png' %}" alt="World Nft Fund Logo">
+            </a>
+        </div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+            <li><a href="{% url 'home' %}">WNF</a></li>
+            <li><a href="{% url 'projects' %}">Projects</a></li>
+            <li><a href="{% url 'writings' %}">Writing</a></li>
+            <li><a class="active" href="{% url 'donations' %}">Donations</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            {% if user.is_authenticated %}
+            {% if user.is_superuser %}
+            <li><a href="/admin/" target="_blank">Admin</a></li>
+            {% endif %}
+            {% endif %}
+        </ul>
+    </nav>
+    <!-- NAV BAR -->
+
+    <!-- WRITING LIST CONTENT -->
+    <div class="writinglistcontent" style="margin-top: 5rem;">
+        <div class="writingcardcontainer">
+            {% for donation in donations %}
+            <a href="{% url 'donationdetail' donation.slug %}">
+                <div class="writingcard writingcard1" data-aos="fade-up" data-aos-offset="150" data-aos-duration="500">
+                    <div class="writingcardimg">
+                        <img src="/media/{{donation.photo}}" alt="">
+                    </div>
+                    <div class="writingcarddesc">
+                        <h4>{{donation.title}}</h4>
+                        <p>{{donation.sub_title|truncatechars:160}}</p>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+            <a href="">
+                <div class="writingcard writingcard2" data-aos="fade-up" data-aos-offset="150" data-aos-duration="500">
+                    <div class="writingcardimg">
+                        <img src="{% static 'img/cat1.jpg' %}" alt="">
+                    </div>
+                    <div class="writingcarddesc">
+                        <h4>Gold Elementary Book</h4>
+                        <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="writingcard writingcard2" data-aos="fade-up" data-aos-offset="150" data-aos-duration="500">
+                    <div class="writingcardimg">
+                        <img src="{% static 'img/cat2.png' %}" alt="">
+                    </div>
+                    <div class="writingcarddesc">
+                        <h4>Silver Elementary Book</h4>
+                        <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="writingcard writingcard3" data-aos="fade-up" data-aos-offset="150" data-aos-duration="500">
+                    <div class="writingcardimg">
+                        <img src="{% static 'img/cat3.jpg' %}" alt="">
+                    </div>
+                    <div class="writingcarddesc">
+                        <h4>Platinum Elementary Book</h4>
+                        <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="writingcard writingcard4" data-aos="fade-up" data-aos-offset="100" data-aos-duration="500">
+                    <div class="writingcardimg">
+                        <img src="{% static 'img/cat4.jpg' %}" alt="">
+                    </div>
+                    <div class="writingcarddesc">
+                        <h4>Crystal Elementary Book</h4>
+                        <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="writingcard writingcard5" data-aos="fade-up" data-aos-offset="150" data-aos-duration="500">
+                    <div class="writingcardimg">
+                        <img src="{% static 'img/cat5.jpg' %}" alt="">
+                    </div>
+                    <div class="writingcarddesc">
+                        <h4>Gold Elementary Book</h4>
+                        <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="writingcard writingcard6" data-aos="fade-up" data-aos-offset="150" data-aos-duration="500">
+                    <div class="writingcardimg">
+                        <img src="{% static 'img/cat6.jpg' %}" alt="">
+                    </div>
+                    <div class="writingcarddesc">
+                        <h4>Gold Elementary Book</h4>
+                        <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="writingcard writingcard1" data-aos="fade-up" data-aos-offset="150" data-aos-duration="500">
+                    <div class="writingcardimg">
+                        <img src="{% static 'img/cat1.jpg' %}" alt="">
+                    </div>
+                    <div class="writingcarddesc">
+                        <h4>Gold Elementary Book</h4>
+                        <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="writingcard writingcard2" data-aos="fade-up" data-aos-offset="150" data-aos-duration="500">
+                    <div class="writingcardimg">
+                        <img src="{% static 'img/cat2.png' %}" alt="">
+                    </div>
+                    <div class="writingcarddesc">
+                        <h4>Silver Elementary Book</h4>
+                        <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="writingcard writingcard3" data-aos="fade-up" data-aos-offset="150" data-aos-duration="500">
+                    <div class="writingcardimg">
+                        <img src="{% static 'img/cat3.jpg' %}" alt="">
+                    </div>
+                    <div class="writingcarddesc">
+                        <h4>Platinum Elementary Book</h4>
+                        <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="writingcard writingcard4" data-aos="fade-up" data-aos-offset="150" data-aos-duration="500">
+                    <div class="writingcardimg">
+                        <img src="{% static 'img/cat4.jpg' %}" alt="">
+                    </div>
+                    <div class="writingcarddesc">
+                        <h4>Crystal Elementary Book</h4>
+                        <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="writingcard writingcard5" data-aos="fade-up" data-aos-offset="150" data-aos-duration="500">
+                    <div class="writingcardimg">
+                        <img src="{% static 'img/cat5.jpg' %}" alt="">
+                    </div>
+                    <div class="writingcarddesc">
+                        <h4>Gold Elementary Book</h4>
+                        <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="writingcard writingcard6" data-aos="fade-up" data-aos-offset="150" data-aos-duration="500">
+                    <div class="writingcardimg">
+                        <img src="{% static 'img/cat6.jpg' %}" alt="">
+                    </div>
+                    <div class="writingcarddesc">
+                        <h4>Gold Elementary Book</h4>
+                        <p>The gold elementry book have the price of 4ETH tokens with an amazing feature.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- WRITING LIST CONTENT -->
+{% endblock maincontent %}
+{% block js %}
+<script>
+    function submitForm(category){
+        document.getElementById('writingcategory').value = category
+        document.getElementById('catform').submit()
+    }
+</script>
+{% endblock js%}
